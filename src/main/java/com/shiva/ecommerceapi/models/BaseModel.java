@@ -1,0 +1,75 @@
+package com.shiva.ecommerceapi.models;
+
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Date;
+
+@Getter
+@Setter
+@MappedSuperclass
+public class BaseModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Date createdAt;
+    private Date lastUpdatedAt;
+    private boolean isDeleted;
+
+//    public BaseModel(Long id, Date createdAt, Date lastUpdatedAt, boolean isDeleted) {
+//        this.id = id;
+//        this.createdAt = createdAt;
+//        this.lastUpdatedAt = lastUpdatedAt;
+//        this.isDeleted = isDeleted;
+//    }
+//
+//    public BaseModel() {
+//    }
+//
+//    public static BaseModelBuilder builder() {
+//        return new BaseModelBuilder();
+//    }
+//
+//    public static class BaseModelBuilder {
+//        private Long id;
+//        private Date createdAt;
+//        private Date lastUpdatedAt;
+//        private boolean isDeleted;
+//
+//        BaseModelBuilder() {
+//        }
+//
+//        public BaseModelBuilder id(Long id) {
+//            this.id = id;
+//            return this;
+//        }
+//
+//        public BaseModelBuilder createdAt(Date createdAt) {
+//            this.createdAt = createdAt;
+//            return this;
+//        }
+//
+//        public BaseModelBuilder lastUpdatedAt(Date lastUpdatedAt) {
+//            this.lastUpdatedAt = lastUpdatedAt;
+//            return this;
+//        }
+//
+//        public BaseModelBuilder isDeleted(boolean isDeleted) {
+//            this.isDeleted = isDeleted;
+//            return this;
+//        }
+//
+//        public BaseModel build() {
+//            return new BaseModel(this.id, this.createdAt, this.lastUpdatedAt, this.isDeleted);
+//        }
+//
+//        public String toString() {
+//            return "BaseModel.BaseModelBuilder(id=" + this.id + ", createdAt=" + this.createdAt + ", lastUpdatedAt=" + this.lastUpdatedAt + ", isDeleted=" + this.isDeleted + ")";
+//        }
+//    }
+}
